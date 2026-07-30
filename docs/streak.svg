@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="200" viewBox="0 0 480 200">
+    <style>
+      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .big { font: 800 40px "Courier New", monospace; fill: #ffffff; }
+      .label { font: 700 11px "Courier New", monospace; fill: #aaaaaa; text-transform: uppercase; letter-spacing: 1px; }
+      .range { font: 600 11px "Courier New", monospace; fill: #888888; }
+      .divider { stroke: #2a2f28; stroke-width: 1; }
+    </style>
+    <rect class="border" x="0.5" y="0.5" width="479" height="199" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
+    <text x="20" y="28" class="title">MSCHILLER890 // STREAK</text>
+
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" class="big">1</text>
+      <text x="0" y="20" class="label">current streak</text>
+      <text x="0" y="38" class="range">Jul 30 - Jul 30</text>
+    </g>
+
+    <line class="divider" x1="240" y1="50" x2="240" y2="180"/>
+
+    <g transform="translate(260, 70)">
+      <text x="0" y="0" class="big">10</text>
+      <text x="0" y="20" class="label">longest streak</text>
+      <text x="0" y="38" class="range">Jul 13 - Jul 22</text>
+    </g>
+  </svg>
