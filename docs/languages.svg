@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="220" viewBox="0 0 560 220">
+    <style>
+      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .colTitle { font: 700 11px "Courier New", monospace; fill: #aaaaaa; letter-spacing: 1px; }
+      .lang { font: 600 12px "Courier New", monospace; fill: #ffffff; }
+      .pct { font: 700 12px "Courier New", monospace; fill: #888888; }
+      .track { fill: #333333; }
+      .bar { fill: #5cc266; }
+    </style>
+    <rect class="border" x="0.5" y="0.5" width="559" height="219" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
+    <text x="20" y="28" class="title">MSCHILLER890 // LANGUAGES</text>
+    <g transform="translate(20, 55)">
+      <g transform="translate(0, 0)">
+    <text x="0" y="10" class="colTitle">BY BYTES</text>
+    
+      <text x="0" y="40" class="lang">C++</text>
+      <rect x="90" y="29" width="140" height="10" class="track"/>
+      <rect x="90" y="29" width="91" height="10" class="bar"/>
+      <text x="236" y="40" class="pct">65%</text>
+    
+      <text x="0" y="66" class="lang">C</text>
+      <rect x="90" y="55" width="140" height="10" class="track"/>
+      <rect x="90" y="55" width="40.599999999999994" height="10" class="bar"/>
+      <text x="236" y="66" class="pct">29%</text>
+    
+      <text x="0" y="92" class="lang">Java</text>
+      <rect x="90" y="81" width="140" height="10" class="track"/>
+      <rect x="90" y="81" width="2" height="10" class="bar"/>
+      <text x="236" y="92" class="pct">1%</text>
+    
+      <text x="0" y="118" class="lang">Objective-C</text>
+      <rect x="90" y="107" width="140" height="10" class="track"/>
+      <rect x="90" y="107" width="2" height="10" class="bar"/>
+      <text x="236" y="118" class="pct">1%</text>
+    
+      <text x="0" y="144" class="lang">C#</text>
+      <rect x="90" y="133" width="140" height="10" class="track"/>
+      <rect x="90" y="133" width="2" height="10" class="bar"/>
+      <text x="236" y="144" class="pct">1%</text>
+    
+      <text x="0" y="170" class="lang">other</text>
+      <rect x="90" y="159" width="140" height="10" class="track"/>
+      <rect x="90" y="159" width="4.2" height="10" class="bar"/>
+      <text x="236" y="170" class="pct">3%</text>
+    
+  </g>
+      <g transform="translate(270, 0)">
+    <text x="0" y="10" class="colTitle">BY REPOS</text>
+    
+      <text x="0" y="40" class="lang">JavaScript</text>
+      <rect x="90" y="29" width="140" height="10" class="track"/>
+      <rect x="90" y="29" width="35" height="10" class="bar"/>
+      <text x="236" y="40" class="pct">25%</text>
+    
+      <text x="0" y="66" class="lang">Shell</text>
+      <rect x="90" y="55" width="140" height="10" class="track"/>
+      <rect x="90" y="55" width="23.8" height="10" class="bar"/>
+      <text x="236" y="66" class="pct">17%</text>
+    
+      <text x="0" y="92" class="lang">Java</text>
+      <rect x="90" y="81" width="140" height="10" class="track"/>
+      <rect x="90" y="81" width="23.8" height="10" class="bar"/>
+      <text x="236" y="92" class="pct">17%</text>
+    
+      <text x="0" y="118" class="lang">C#</text>
+      <rect x="90" y="107" width="140" height="10" class="track"/>
+      <rect x="90" y="107" width="23.8" height="10" class="bar"/>
+      <text x="236" y="118" class="pct">17%</text>
+    
+      <text x="0" y="144" class="lang">C++</text>
+      <rect x="90" y="133" width="140" height="10" class="track"/>
+      <rect x="90" y="133" width="11.200000000000001" height="10" class="bar"/>
+      <text x="236" y="144" class="pct">8%</text>
+    
+      <text x="0" y="170" class="lang">other</text>
+      <rect x="90" y="159" width="140" height="10" class="track"/>
+      <rect x="90" y="159" width="23.8" height="10" class="bar"/>
+      <text x="236" y="170" class="pct">17%</text>
+    
+  </g>
+    </g>
+  </svg>
