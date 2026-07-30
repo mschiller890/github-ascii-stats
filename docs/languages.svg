@@ -1,110 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="287" viewBox="0 0 620 287">
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="281" viewBox="0 0 620 281">
     <style>
       @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap");
       @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       svg { animation: fadeUp 0.6s ease-out both; }
-      .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .sep { font: 400 10px "JetBrains Mono", "Courier New", monospace; fill: #2a2f28; }
-      .colTitle { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; letter-spacing: 1px; }
+      .colTitle { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
       .lang { font: 600 12px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
-      .pct { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
+      .pct { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
       .track { fill: #1c1f1a; }
       .bar { fill: #5cc266; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
-    <g transform="translate(20, 55)">
+    <g transform="translate(20, 52)">
       <g transform="translate(0, 0)">
-    <text x="0" y="10" class="colTitle">BY BYTES</text>
+    <text x="0" y="10" class="colTitle">// BY BYTES</text>
     
       <text x="0" y="40" class="lang">C++</text>
-      <rect x="90" y="29" width="180" height="10" class="track"/>
-      <rect x="90" y="29" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="117" dur="0.6s" begin="0s" fill="freeze"/>
+      <rect x="85" y="29" width="133" height="10" class="track"/>
+      <rect x="85" y="29" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="86.45" dur="0.6s" begin="0s" fill="freeze"/>
       </rect>
-      <text x="262" y="40" class="pct" text-anchor="end">[ 65% ]</text>
+      <text x="264" y="40" class="pct" text-anchor="end">65%</text>
     
       <text x="0" y="66" class="lang">C</text>
-      <rect x="90" y="55" width="180" height="10" class="track"/>
-      <rect x="90" y="55" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="52.199999999999996" dur="0.6s" begin="0.08s" fill="freeze"/>
+      <rect x="85" y="55" width="133" height="10" class="track"/>
+      <rect x="85" y="55" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="38.57" dur="0.6s" begin="0.08s" fill="freeze"/>
       </rect>
-      <text x="262" y="66" class="pct" text-anchor="end">[ 29% ]</text>
+      <text x="264" y="66" class="pct" text-anchor="end">29%</text>
     
       <text x="0" y="92" class="lang">Java</text>
-      <rect x="90" y="81" width="180" height="10" class="track"/>
-      <rect x="90" y="81" width="0" height="10" class="bar">
+      <rect x="85" y="81" width="133" height="10" class="track"/>
+      <rect x="85" y="81" width="0" height="10" class="bar">
         <animate attributeName="width" from="0" to="2" dur="0.6s" begin="0.16s" fill="freeze"/>
       </rect>
-      <text x="262" y="92" class="pct" text-anchor="end">[ 1% ]</text>
+      <text x="264" y="92" class="pct" text-anchor="end">1%</text>
     
       <text x="0" y="118" class="lang">Objective-C</text>
-      <rect x="90" y="107" width="180" height="10" class="track"/>
-      <rect x="90" y="107" width="0" height="10" class="bar">
+      <rect x="85" y="107" width="133" height="10" class="track"/>
+      <rect x="85" y="107" width="0" height="10" class="bar">
         <animate attributeName="width" from="0" to="2" dur="0.6s" begin="0.24s" fill="freeze"/>
       </rect>
-      <text x="262" y="118" class="pct" text-anchor="end">[ 1% ]</text>
+      <text x="264" y="118" class="pct" text-anchor="end">1%</text>
     
       <text x="0" y="144" class="lang">C#</text>
-      <rect x="90" y="133" width="180" height="10" class="track"/>
-      <rect x="90" y="133" width="0" height="10" class="bar">
+      <rect x="85" y="133" width="133" height="10" class="track"/>
+      <rect x="85" y="133" width="0" height="10" class="bar">
         <animate attributeName="width" from="0" to="2" dur="0.6s" begin="0.32s" fill="freeze"/>
       </rect>
-      <text x="262" y="144" class="pct" text-anchor="end">[ 1% ]</text>
+      <text x="264" y="144" class="pct" text-anchor="end">1%</text>
     
       <text x="0" y="170" class="lang">other</text>
-      <rect x="90" y="159" width="180" height="10" class="track"/>
-      <rect x="90" y="159" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="5.3999999999999995" dur="0.6s" begin="0.4s" fill="freeze"/>
+      <rect x="85" y="159" width="133" height="10" class="track"/>
+      <rect x="85" y="159" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="3.9899999999999998" dur="0.6s" begin="0.4s" fill="freeze"/>
       </rect>
-      <text x="262" y="170" class="pct" text-anchor="end">[ 3% ]</text>
+      <text x="264" y="170" class="pct" text-anchor="end">3%</text>
     
   </g>
       <g transform="translate(306, 0)">
-    <text x="0" y="10" class="colTitle">BY REPOS</text>
+    <text x="0" y="10" class="colTitle">// BY REPOS</text>
     
       <text x="0" y="40" class="lang">JavaScript</text>
-      <rect x="90" y="29" width="180" height="10" class="track"/>
-      <rect x="90" y="29" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="45" dur="0.6s" begin="0s" fill="freeze"/>
+      <rect x="85" y="29" width="133" height="10" class="track"/>
+      <rect x="85" y="29" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="33.25" dur="0.6s" begin="0s" fill="freeze"/>
       </rect>
-      <text x="262" y="40" class="pct" text-anchor="end">[ 25% ]</text>
+      <text x="264" y="40" class="pct" text-anchor="end">25%</text>
     
       <text x="0" y="66" class="lang">Shell</text>
-      <rect x="90" y="55" width="180" height="10" class="track"/>
-      <rect x="90" y="55" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="30.6" dur="0.6s" begin="0.08s" fill="freeze"/>
+      <rect x="85" y="55" width="133" height="10" class="track"/>
+      <rect x="85" y="55" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="22.610000000000003" dur="0.6s" begin="0.08s" fill="freeze"/>
       </rect>
-      <text x="262" y="66" class="pct" text-anchor="end">[ 17% ]</text>
+      <text x="264" y="66" class="pct" text-anchor="end">17%</text>
     
       <text x="0" y="92" class="lang">Java</text>
-      <rect x="90" y="81" width="180" height="10" class="track"/>
-      <rect x="90" y="81" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="30.6" dur="0.6s" begin="0.16s" fill="freeze"/>
+      <rect x="85" y="81" width="133" height="10" class="track"/>
+      <rect x="85" y="81" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="22.610000000000003" dur="0.6s" begin="0.16s" fill="freeze"/>
       </rect>
-      <text x="262" y="92" class="pct" text-anchor="end">[ 17% ]</text>
+      <text x="264" y="92" class="pct" text-anchor="end">17%</text>
     
       <text x="0" y="118" class="lang">C#</text>
-      <rect x="90" y="107" width="180" height="10" class="track"/>
-      <rect x="90" y="107" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="30.6" dur="0.6s" begin="0.24s" fill="freeze"/>
+      <rect x="85" y="107" width="133" height="10" class="track"/>
+      <rect x="85" y="107" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="22.610000000000003" dur="0.6s" begin="0.24s" fill="freeze"/>
       </rect>
-      <text x="262" y="118" class="pct" text-anchor="end">[ 17% ]</text>
+      <text x="264" y="118" class="pct" text-anchor="end">17%</text>
     
       <text x="0" y="144" class="lang">C++</text>
-      <rect x="90" y="133" width="180" height="10" class="track"/>
-      <rect x="90" y="133" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="14.4" dur="0.6s" begin="0.32s" fill="freeze"/>
+      <rect x="85" y="133" width="133" height="10" class="track"/>
+      <rect x="85" y="133" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="10.64" dur="0.6s" begin="0.32s" fill="freeze"/>
       </rect>
-      <text x="262" y="144" class="pct" text-anchor="end">[ 8% ]</text>
+      <text x="264" y="144" class="pct" text-anchor="end">8%</text>
     
       <text x="0" y="170" class="lang">other</text>
-      <rect x="90" y="159" width="180" height="10" class="track"/>
-      <rect x="90" y="159" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="30.6" dur="0.6s" begin="0.4s" fill="freeze"/>
+      <rect x="85" y="159" width="133" height="10" class="track"/>
+      <rect x="85" y="159" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="22.610000000000003" dur="0.6s" begin="0.4s" fill="freeze"/>
       </rect>
-      <text x="262" y="170" class="pct" text-anchor="end">[ 17% ]</text>
+      <text x="264" y="170" class="pct" text-anchor="end">17%</text>
     
   </g>
     </g>
