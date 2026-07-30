@@ -17,9 +17,11 @@ export function renderCalendarSvg({ calendar, stats }) {
   const maxCount = Math.max(1, ...weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount)));
 
   const cellH = 20;
-  const padLeft = 32;
-  const padTop = 68;
-  const cellW = Math.min(14, weeks.length > 1 ? (620 - padLeft) / (weeks.length - 1) : 14);
+  const padLeft = 44;
+  const padTop = 64;
+  const cellW = weeks.length > 1
+    ? Math.min(14, (616 - padLeft) / (weeks.length - 1))
+    : 14;
   const width = 620;
   const height = padTop + 7 * cellH + 60;
 
@@ -51,14 +53,13 @@ export function renderCalendarSvg({ calendar, stats }) {
   });
 
   const dayLabels = `
-    <text x="6" y="${padTop + 1 * cellH}" class="daylabel">mon</text>
-    <text x="6" y="${padTop + 3 * cellH}" class="daylabel">wed</text>
-    <text x="6" y="${padTop + 5 * cellH}" class="daylabel">fri</text>
+    <text x="6" y="${padTop + 1 * cellH}" class="day">mon</text>
+    <text x="6" y="${padTop + 3 * cellH}" class="day">wed</text>
+    <text x="6" y="${padTop + 5 * cellH}" class="day">fri</text>
   `;
 
-  const caption = `[ ${stats.totalActiveDays} of ${stats.totalDays} days with contributions ]`;
   const pct = Math.round((stats.totalActiveDays / stats.totalDays) * 100);
-  const tagline = `> ${pct}% commit rate`;
+  const caption = `${stats.totalActiveDays} / ${stats.totalDays} days  ·  ${pct}% commit rate`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
@@ -66,23 +67,19 @@ export function renderCalendarSvg({ calendar, stats }) {
       @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-      @keyframes typeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
       svg { animation: fadeUp 0.6s ease-out both; }
-      .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .sep { font: 400 10px "JetBrains Mono", "Courier New", monospace; fill: #2a2f28; }
-      .month { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; text-transform: uppercase; }
-      .daylabel { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; text-transform: uppercase; }
+      .month { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; text-transform: uppercase; }
+      .day { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; text-transform: uppercase; }
       .cell { font: 700 13px "JetBrains Mono", "Courier New", monospace; }
       .a { animation: pulse 2s ease-in-out infinite; }
-      .caption { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; }
-      .tagline { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
+      .cap { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; }
     </style>
     <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
     ${monthLabels}
     ${dayLabels}
     ${cells}
-    <text x="20" y="${height - 28}" class="caption">${caption}</text>
-    <text x="20" y="${height - 14}" class="tagline">${tagline}</text>
+    <text x="20" y="${height - 18}" class="cap">${caption}</text>
   </svg>`;
 }
