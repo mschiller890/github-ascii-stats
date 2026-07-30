@@ -55,8 +55,7 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
       .bar { fill: #5cc266; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
-    <text x="20" y="40" class="sep">${'─'.repeat(75)}</text>
-    <g transform="translate(20, 59)">
+    <g transform="translate(20, 55)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
       ${column("BY REPOS", reposEntries, colWidth + 36, colWidth)}
     </g>

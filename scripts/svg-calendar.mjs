@@ -79,7 +79,6 @@ export function renderCalendarSvg({ calendar, stats }) {
       .tagline { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
     </style>
     <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
-    <text x="20" y="38" class="sep">${'─'.repeat(75)}</text>
     ${monthLabels}
     ${dayLabels}
     ${cells}
