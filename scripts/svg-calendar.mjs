@@ -19,7 +19,7 @@ export function renderCalendarSvg({ calendar, stats }) {
   const cellW = 22;
   const cellH = 20;
   const padLeft = 42;
-  const padTop = 56;
+  const padTop = 64;
   const width = padLeft + weeks.length * cellW + 30;
   const height = padTop + 7 * cellH + 60;
 
@@ -60,7 +60,7 @@ export function renderCalendarSvg({ calendar, stats }) {
       .cell { font: 700 13px "Courier New", monospace; }
       .caption { font: 600 11px "Courier New", monospace; fill: #aaaaaa; }
     </style>
-    <text x="20" y="28" class="title">// THE YEAR</text>
+    <text x="20" y="26" class="title">// THE YEAR</text>
     ${monthLabels}
     ${dayLabels}
     ${cells}
