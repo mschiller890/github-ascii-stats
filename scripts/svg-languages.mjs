@@ -12,10 +12,13 @@ function column(title, entries, x, width) {
   entries.forEach(([name, pct], i) => {
     const y = 40 + i * 26;
     const barW = Math.max(2, (pct / 100) * (width - 90));
+    const delay = i * 0.08;
     rows += `
       <text x="0" y="${y}" class="lang">${name}</text>
       <rect x="90" y="${y - 11}" width="${width - 90}" height="10" class="track"/>
-      <rect x="90" y="${y - 11}" width="${barW}" height="10" class="bar"/>
+      <rect x="90" y="${y - 11}" width="0" height="10" class="bar">
+        <animate attributeName="width" from="0" to="${barW}" dur="0.6s" begin="${delay}s" fill="freeze"/>
+      </rect>
       <text x="${width + 6}" y="${y}" class="pct">${pct}%</text>
     `;
   });
@@ -36,14 +39,18 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .cursor { animation: blink 1.2s steps(1) infinite; }
       .colTitle { font: 700 11px "Courier New", monospace; fill: #aaaaaa; letter-spacing: 1px; }
       .lang { font: 600 12px "Courier New", monospace; fill: #ffffff; }
       .pct { font: 700 12px "Courier New", monospace; fill: #888888; }
       .track { fill: #333333; }
       .bar { fill: #5cc266; }
     </style>
-    <text x="20" y="28" class="title">// LANGUAGES</text>
+    <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
     <g transform="translate(20, 55)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
       ${column("BY REPOS", reposEntries, colWidth + 40, colWidth)}

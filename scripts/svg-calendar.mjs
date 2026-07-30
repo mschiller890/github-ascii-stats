@@ -40,7 +40,8 @@ export function renderCalendarSvg({ calendar, stats }) {
       const lvl = levelFor(day.contributionCount, maxCount);
       const x = padLeft + wi * cellW;
       const y = padTop + day.weekday * cellH;
-      cells += `<text x="${x}" y="${y}" class="cell" fill="${COLORS[lvl]}">${SYMBOLS[lvl]}</text>`;
+      const cls = lvl > 0 ? "a" : "";
+      cells += `<text x="${x}" y="${y}" class="cell ${cls}" fill="${COLORS[lvl]}">${SYMBOLS[lvl]}</text>`;
     });
   });
 
@@ -54,13 +55,19 @@ export function renderCalendarSvg({ calendar, stats }) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .cursor { animation: blink 1.2s steps(1) infinite; }
       .month { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .daylabel { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .cell { font: 700 13px "Courier New", monospace; }
+      .a { animation: pulse 2s ease-in-out infinite; }
       .caption { font: 600 11px "Courier New", monospace; fill: #aaaaaa; }
     </style>
-    <text x="20" y="26" class="title">// THE YEAR</text>
+    <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
     ${monthLabels}
     ${dayLabels}
     ${cells}
