@@ -17,7 +17,6 @@
       .tagline { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
     </style>
     <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
-    <text x="20" y="38" class="sep">───────────────────────────────────────────────────────────────────────────</text>
     <text x="32" y="54" class="month">jul</text><text x="99.84615384615385" y="54" class="month">sep</text><text x="145.0769230769231" y="54" class="month">oct</text><text x="190.30769230769232" y="54" class="month">nov</text><text x="246.84615384615387" y="54" class="month">dec</text><text x="292.0769230769231" y="54" class="month">jan</text><text x="337.3076923076923" y="54" class="month">feb</text><text x="382.53846153846155" y="54" class="month">mar</text><text x="439.0769230769231" y="54" class="month">apr</text><text x="484.3076923076923" y="54" class="month">may</text><text x="540.8461538461538" y="54" class="month">jun</text><text x="586.0769230769231" y="54" class="month">jul</text>
     
     <text x="6" y="88" class="daylabel">mon</text>

@@ -14,8 +14,7 @@
       .bar { fill: #5cc266; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
-    <text x="20" y="40" class="sep">───────────────────────────────────────────────────────────────────────────</text>
-    <g transform="translate(20, 59)">
+    <g transform="translate(20, 55)">
       <g transform="translate(0, 0)">
     <text x="0" y="10" class="colTitle">BY BYTES</text>
     
