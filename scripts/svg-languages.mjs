@@ -7,37 +7,40 @@ function topN(entries, n = 5) {
   return top.map(([name, v]) => [name, Math.round((v / total) * 100)]);
 }
 
-function column(title, entries, x, colW) {
-  const nameW = 85;
-  const barMaxW = colW - nameW - 52;
-  let rows = "";
-  entries.forEach(([name, pct], i) => {
-    const y = 40 + i * 26;
-    const barW = Math.max(2, (pct / 100) * barMaxW);
-    const delay = i * 0.08;
-    rows += `
-      <text x="0" y="${y}" class="lang">${name}</text>
-      <rect x="${nameW}" y="${y - 11}" width="${barMaxW}" height="10" class="track"/>
-      <rect x="${nameW}" y="${y - 11}" width="0" height="10" class="bar">
-        <animate attributeName="width" from="0" to="${barW}" dur="0.6s" begin="${delay}s" fill="freeze"/>
-      </rect>
-      <text x="${colW - 6}" y="${y}" class="pct" text-anchor="end">${pct}%</text>
-    `;
-  });
-  return `<g transform="translate(${x}, 0)">
-    <text x="0" y="10" class="colTitle">// ${title}</text>
-    ${rows}
-  </g>`;
-}
-
 export function renderLanguagesSvg({ byBytes, byRepos }) {
   const width = 620;
-  const colW = 270;
+  const colW = 286;
+  const barX = 78;
+  const barLen = 22;
+  const barW = barLen * 7;
 
   const bytesEntries = topN(Object.entries(byBytes));
   const reposEntries = topN(Object.entries(byRepos));
   const maxEntries = Math.max(bytesEntries.length, reposEntries.length);
-  const height = 95 + maxEntries * 26 + 30;
+  const height = 95 + maxEntries * 26 + 24;
+
+  let defs = "";
+
+  function col(title, entries, cx) {
+    let rows = "";
+    entries.forEach(([name, pct], i) => {
+      const y = 40 + i * 26;
+      const d = i * 0.08;
+      const cid = `${cx}_${i}`;
+      defs += `<clipPath id="${cid}"><rect x="${barX + 6}" y="${y - 9}" width="0" height="14"><animate attributeName="width" from="0" to="${barW}" dur="0.5s" begin="${d}s" fill="freeze"/></rect></clipPath>`;
+      rows += `
+      <text x="0" y="${y}" class="nm">${name}</text>
+      <text x="${barX}" y="${y}" class="br">[</text>
+      <text x="${barX + 6}" y="${y}" class="bg">${'.'.repeat(barLen)}</text>
+      <text x="${barX + 6}" y="${y}" class="fg" clip-path="url(#${cid})">${'#'.repeat(barLen)}</text>
+      <text x="${barX + 6 + barW}" y="${y}" class="br">]</text>
+      <text x="${barX + 6 + barW + 8}" y="${y}" class="pct">${pct}%</text>`;
+    });
+    return `<g transform="translate(${cx}, 0)"><text x="0" y="12" class="ct">## ${title}</text>${rows}</g>`;
+  }
+
+  const c1 = col("BY BYTES", bytesEntries, 0);
+  const c2 = col("BY REPOS", reposEntries, colW + 34);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
@@ -47,16 +50,18 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
       svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .colTitle { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
-      .lang { font: 600 12px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
-      .pct { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
-      .track { fill: #1c1f1a; }
-      .bar { fill: #5cc266; }
+      .ct { font: 700 10px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
+      .nm { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
+      .br { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
+      .bg { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #2a2f28; }
+      .fg { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #5cc266; }
+      .pct { font: 700 10px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
+    <defs>${defs}</defs>
     <g transform="translate(20, 52)">
-      ${column("BY BYTES", bytesEntries, 0, colW)}
-      ${column("BY REPOS", reposEntries, colW + 36, colW)}
+      ${c1}
+      ${c2}
     </g>
   </svg>`;
 }

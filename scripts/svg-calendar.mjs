@@ -18,12 +18,12 @@ export function renderCalendarSvg({ calendar, stats }) {
 
   const cellH = 20;
   const padLeft = 44;
-  const padTop = 64;
+  const padTop = 60;
   const cellW = weeks.length > 1
-    ? Math.min(14, (616 - padLeft) / (weeks.length - 1))
+    ? Math.min(14, (604 - padLeft) / (weeks.length - 1))
     : 14;
   const width = 620;
-  const height = padTop + 7 * cellH + 60;
+  const height = padTop + 7 * cellH + 56;
 
   let cells = "";
   let monthLabels = "";
@@ -70,16 +70,25 @@ export function renderCalendarSvg({ calendar, stats }) {
       svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .month { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; text-transform: uppercase; }
-      .day { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #444444; text-transform: uppercase; }
-      .cell { font: 700 13px "JetBrains Mono", "Courier New", monospace; }
+      .month { font: 600 10px "JetBrains Mono", "Courier New", monospace; fill: #555555; text-transform: uppercase; }
+      .day { font: 600 10px "JetBrains Mono", "Courier New", monospace; fill: #444444; text-transform: uppercase; }
+      .cell { font: 700 12px "JetBrains Mono", "Courier New", monospace; }
       .a { animation: pulse 2s ease-in-out infinite; }
       .cap { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; }
     </style>
     <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
-    ${monthLabels}
-    ${dayLabels}
-    ${cells}
+    <defs>
+      <clipPath id="g">
+        <rect x="0" y="0" width="0" height="${height}">
+          <animate attributeName="width" from="0" to="${width}" dur="0.8s" fill="freeze"/>
+        </rect>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#g)">
+      ${monthLabels}
+      ${dayLabels}
+      ${cells}
+    </g>
     <text x="20" y="${height - 18}" class="cap">${caption}</text>
   </svg>`;
 }
