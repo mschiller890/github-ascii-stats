@@ -19,7 +19,7 @@ function column(title, entries, x, width) {
       <rect x="90" y="${y - 11}" width="0" height="10" class="bar">
         <animate attributeName="width" from="0" to="${barW}" dur="0.6s" begin="${delay}s" fill="freeze"/>
       </rect>
-      <text x="${width + 6}" y="${y}" class="pct">[ ${pct}% ]</text>
+      <text x="${width - 8}" y="${y}" class="pct" text-anchor="end">[ ${pct}% ]</text>
     `;
   });
   return `<g transform="translate(${x}, 0)">
@@ -58,7 +58,7 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
     <text x="20" y="40" class="sep">${'─'.repeat(75)}</text>
     <g transform="translate(20, 59)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
-      ${column("BY REPOS", reposEntries, colWidth + 30, colWidth)}
+      ${column("BY REPOS", reposEntries, colWidth + 36, colWidth)}
     </g>
   </svg>`;
 }

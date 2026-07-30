@@ -17,7 +17,7 @@ export function renderCalendarSvg({ calendar, stats }) {
   const maxCount = Math.max(1, ...weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount)));
 
   const cellH = 20;
-  const padLeft = 36;
+  const padLeft = 32;
   const padTop = 68;
   const cellW = Math.min(14, weeks.length > 1 ? (620 - padLeft) / (weeks.length - 1) : 14);
   const width = 620;
@@ -26,13 +26,18 @@ export function renderCalendarSvg({ calendar, stats }) {
   let cells = "";
   let monthLabels = "";
   let lastMonth = -1;
+  let lastMonthX = -Infinity;
 
   weeks.forEach((week, wi) => {
     const firstDay = week.contributionDays.find((d) => d.contributionCount >= 0);
     if (firstDay) {
       const m = new Date(firstDay.date + "T00:00:00Z").getUTCMonth();
       if (m !== lastMonth) {
-        monthLabels += `<text x="${padLeft + wi * cellW}" y="${padTop - 14}" class="month">${MONTHS[m]}</text>`;
+        const x = padLeft + wi * cellW;
+        if (x > lastMonthX + 28) {
+          monthLabels += `<text x="${x}" y="${padTop - 14}" class="month">${MONTHS[m]}</text>`;
+          lastMonthX = x;
+        }
         lastMonth = m;
       }
     }
