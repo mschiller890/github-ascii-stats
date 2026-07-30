@@ -68,7 +68,7 @@ Embed anywhere that renders images, e.g. your profile README:
   `.github/workflows/update-stats.yml`.
 - **Which repos count toward languages**: `buildLanguageStats` in
   `scripts/index.mjs` currently uses all non-fork repos owned by the user;
-  filter further there if you want to exclude specific repos.
+  filter further there if you want to exclude specific repositories.
 - **Card size/fonts**: each `scripts/svg-*.mjs` file is a small, self
   contained SVG template — tweak freely.
 

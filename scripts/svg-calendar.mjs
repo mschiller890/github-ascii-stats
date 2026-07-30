@@ -12,7 +12,7 @@ function levelFor(count, max) {
   return 4;
 }
 
-export function renderCalendarSvg({ calendar, stats, username }) {
+export function renderCalendarSvg({ calendar, stats }) {
   const weeks = calendar.weeks;
   const maxCount = Math.max(1, ...weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount)));
 
@@ -54,14 +54,13 @@ export function renderCalendarSvg({ calendar, stats, username }) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
-      .title { font: 700 15px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
       .month { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .daylabel { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .cell { font: 700 13px "Courier New", monospace; }
-      .caption { font: 600 12px "Courier New", monospace; fill: #aaaaaa; }
+      .caption { font: 600 11px "Courier New", monospace; fill: #aaaaaa; }
     </style>
-    <rect class="border" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
-    <text x="20" y="28" class="title">${username.toUpperCase()} // THE YEAR</text>
+    <text x="20" y="28" class="title">// THE YEAR</text>
     ${monthLabels}
     ${dayLabels}
     ${cells}

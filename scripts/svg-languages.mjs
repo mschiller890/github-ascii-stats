@@ -25,13 +25,14 @@ function column(title, entries, x, width) {
   </g>`;
 }
 
-export function renderLanguagesSvg({ byBytes, byRepos, username }) {
+export function renderLanguagesSvg({ byBytes, byRepos }) {
   const width = 560;
-  const height = 220;
   const colWidth = 230;
 
   const bytesEntries = topN(Object.entries(byBytes));
   const reposEntries = topN(Object.entries(byRepos));
+  const maxEntries = Math.max(bytesEntries.length, reposEntries.length);
+  const height = 95 + maxEntries * 26 + 30;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
@@ -42,8 +43,7 @@ export function renderLanguagesSvg({ byBytes, byRepos, username }) {
       .track { fill: #333333; }
       .bar { fill: #5cc266; }
     </style>
-    <rect class="border" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
-    <text x="20" y="28" class="title">${username.toUpperCase()} // LANGUAGES</text>
+    <text x="20" y="28" class="title">// LANGUAGES</text>
     <g transform="translate(20, 55)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
       ${column("BY REPOS", reposEntries, colWidth + 40, colWidth)}

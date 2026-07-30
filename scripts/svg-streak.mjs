@@ -1,6 +1,6 @@
 import { fmtDate } from "./streak.mjs";
 
-export function renderStreakSvg({ stats, username }) {
+export function renderStreakSvg({ stats }) {
   const width = 480;
   const height = 200;
 
@@ -19,8 +19,7 @@ export function renderStreakSvg({ stats, username }) {
       .range { font: 600 11px "Courier New", monospace; fill: #888888; }
       .divider { stroke: #2a2f28; stroke-width: 1; }
     </style>
-    <rect class="border" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
-    <text x="20" y="28" class="title">${username.toUpperCase()} // STREAK</text>
+    <text x="20" y="28" class="title">// STREAK</text>
 
     <g transform="translate(20, 70)">
       <text x="0" y="0" class="big">${stats.current.length}</text>

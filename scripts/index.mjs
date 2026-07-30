@@ -46,9 +46,9 @@ async function main() {
   const stats = computeStreaks(calendar);
   const { byBytes, byRepos } = await buildLanguageStats(USERNAME);
 
-  const calendarSvg = renderCalendarSvg({ calendar, stats, username: USERNAME });
-  const streakSvg = renderStreakSvg({ stats, username: USERNAME });
-  const languagesSvg = renderLanguagesSvg({ byBytes, byRepos, username: USERNAME });
+  const calendarSvg = renderCalendarSvg({ calendar, stats });
+  const streakSvg = renderStreakSvg({ stats });
+  const languagesSvg = renderLanguagesSvg({ byBytes, byRepos });
 
   await writeFile(path.join(OUT_DIR, "contribution-ascii.svg"), calendarSvg, "utf8");
   await writeFile(path.join(OUT_DIR, "streak.svg"), streakSvg, "utf8");
