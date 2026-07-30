@@ -14,80 +14,80 @@
       .pct { font: 700 10px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
-    <defs><clipPath id="0_0"><rect x="84" y="31" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0s" fill="freeze"/></rect></clipPath><clipPath id="0_1"><rect x="84" y="57" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.08s" fill="freeze"/></rect></clipPath><clipPath id="0_2"><rect x="84" y="83" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.16s" fill="freeze"/></rect></clipPath><clipPath id="0_3"><rect x="84" y="109" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.24s" fill="freeze"/></rect></clipPath><clipPath id="0_4"><rect x="84" y="135" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.32s" fill="freeze"/></rect></clipPath><clipPath id="0_5"><rect x="84" y="161" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath><clipPath id="320_0"><rect x="84" y="31" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0s" fill="freeze"/></rect></clipPath><clipPath id="320_1"><rect x="84" y="57" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.08s" fill="freeze"/></rect></clipPath><clipPath id="320_2"><rect x="84" y="83" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.16s" fill="freeze"/></rect></clipPath><clipPath id="320_3"><rect x="84" y="109" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.24s" fill="freeze"/></rect></clipPath><clipPath id="320_4"><rect x="84" y="135" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.32s" fill="freeze"/></rect></clipPath><clipPath id="320_5"><rect x="84" y="161" width="0" height="14"><animate attributeName="width" from="0" to="154" dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath></defs>
+    <defs><clipPath id="0_0"><rect x="84" y="31" width="0" height="14"><animate attributeName="width" from="0" to="98" dur="0.5s" begin="0s" fill="freeze"/></rect></clipPath><clipPath id="0_1"><rect x="84" y="57" width="0" height="14"><animate attributeName="width" from="0" to="42" dur="0.5s" begin="0.08s" fill="freeze"/></rect></clipPath><clipPath id="0_2"><rect x="84" y="83" width="0" height="14"><animate attributeName="width" from="0" to="0" dur="0.5s" begin="0.16s" fill="freeze"/></rect></clipPath><clipPath id="0_3"><rect x="84" y="109" width="0" height="14"><animate attributeName="width" from="0" to="0" dur="0.5s" begin="0.24s" fill="freeze"/></rect></clipPath><clipPath id="0_4"><rect x="84" y="135" width="0" height="14"><animate attributeName="width" from="0" to="0" dur="0.5s" begin="0.32s" fill="freeze"/></rect></clipPath><clipPath id="0_5"><rect x="84" y="161" width="0" height="14"><animate attributeName="width" from="0" to="7" dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath><clipPath id="320_0"><rect x="84" y="31" width="0" height="14"><animate attributeName="width" from="0" to="42" dur="0.5s" begin="0s" fill="freeze"/></rect></clipPath><clipPath id="320_1"><rect x="84" y="57" width="0" height="14"><animate attributeName="width" from="0" to="28" dur="0.5s" begin="0.08s" fill="freeze"/></rect></clipPath><clipPath id="320_2"><rect x="84" y="83" width="0" height="14"><animate attributeName="width" from="0" to="28" dur="0.5s" begin="0.16s" fill="freeze"/></rect></clipPath><clipPath id="320_3"><rect x="84" y="109" width="0" height="14"><animate attributeName="width" from="0" to="28" dur="0.5s" begin="0.24s" fill="freeze"/></rect></clipPath><clipPath id="320_4"><rect x="84" y="135" width="0" height="14"><animate attributeName="width" from="0" to="14" dur="0.5s" begin="0.32s" fill="freeze"/></rect></clipPath><clipPath id="320_5"><rect x="84" y="161" width="0" height="14"><animate attributeName="width" from="0" to="28" dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath></defs>
     <g transform="translate(20, 52)">
       <g transform="translate(0, 0)"><text x="0" y="12" class="ct">## BY BYTES</text>
       <text x="0" y="40" class="nm">C++</text>
       <text x="78" y="40" class="br">[</text>
       <text x="84" y="40" class="bg">......................</text>
-      <text x="84" y="40" class="fg" clip-path="url(#0_0)">######################</text>
+      <text x="84" y="40" class="fg" clip-path="url(#0_0)">##############</text>
       <text x="238" y="40" class="br">]</text>
       <text x="246" y="40" class="pct">65%</text>
       <text x="0" y="66" class="nm">C</text>
       <text x="78" y="66" class="br">[</text>
       <text x="84" y="66" class="bg">......................</text>
-      <text x="84" y="66" class="fg" clip-path="url(#0_1)">######################</text>
+      <text x="84" y="66" class="fg" clip-path="url(#0_1)">######</text>
       <text x="238" y="66" class="br">]</text>
       <text x="246" y="66" class="pct">29%</text>
       <text x="0" y="92" class="nm">Java</text>
       <text x="78" y="92" class="br">[</text>
       <text x="84" y="92" class="bg">......................</text>
-      <text x="84" y="92" class="fg" clip-path="url(#0_2)">######################</text>
+      <text x="84" y="92" class="fg" clip-path="url(#0_2)"></text>
       <text x="238" y="92" class="br">]</text>
       <text x="246" y="92" class="pct">1%</text>
       <text x="0" y="118" class="nm">Objective-C</text>
       <text x="78" y="118" class="br">[</text>
       <text x="84" y="118" class="bg">......................</text>
-      <text x="84" y="118" class="fg" clip-path="url(#0_3)">######################</text>
+      <text x="84" y="118" class="fg" clip-path="url(#0_3)"></text>
       <text x="238" y="118" class="br">]</text>
       <text x="246" y="118" class="pct">1%</text>
       <text x="0" y="144" class="nm">C#</text>
       <text x="78" y="144" class="br">[</text>
       <text x="84" y="144" class="bg">......................</text>
-      <text x="84" y="144" class="fg" clip-path="url(#0_4)">######################</text>
+      <text x="84" y="144" class="fg" clip-path="url(#0_4)"></text>
       <text x="238" y="144" class="br">]</text>
       <text x="246" y="144" class="pct">1%</text>
       <text x="0" y="170" class="nm">other</text>
       <text x="78" y="170" class="br">[</text>
       <text x="84" y="170" class="bg">......................</text>
-      <text x="84" y="170" class="fg" clip-path="url(#0_5)">######################</text>
+      <text x="84" y="170" class="fg" clip-path="url(#0_5)">#</text>
       <text x="238" y="170" class="br">]</text>
       <text x="246" y="170" class="pct">3%</text></g>
       <g transform="translate(320, 0)"><text x="0" y="12" class="ct">## BY REPOS</text>
       <text x="0" y="40" class="nm">JavaScript</text>
       <text x="78" y="40" class="br">[</text>
       <text x="84" y="40" class="bg">......................</text>
-      <text x="84" y="40" class="fg" clip-path="url(#320_0)">######################</text>
+      <text x="84" y="40" class="fg" clip-path="url(#320_0)">######</text>
       <text x="238" y="40" class="br">]</text>
       <text x="246" y="40" class="pct">25%</text>
       <text x="0" y="66" class="nm">Shell</text>
       <text x="78" y="66" class="br">[</text>
       <text x="84" y="66" class="bg">......................</text>
-      <text x="84" y="66" class="fg" clip-path="url(#320_1)">######################</text>
+      <text x="84" y="66" class="fg" clip-path="url(#320_1)">####</text>
       <text x="238" y="66" class="br">]</text>
       <text x="246" y="66" class="pct">17%</text>
       <text x="0" y="92" class="nm">Java</text>
       <text x="78" y="92" class="br">[</text>
       <text x="84" y="92" class="bg">......................</text>
-      <text x="84" y="92" class="fg" clip-path="url(#320_2)">######################</text>
+      <text x="84" y="92" class="fg" clip-path="url(#320_2)">####</text>
       <text x="238" y="92" class="br">]</text>
       <text x="246" y="92" class="pct">17%</text>
       <text x="0" y="118" class="nm">C#</text>
       <text x="78" y="118" class="br">[</text>
       <text x="84" y="118" class="bg">......................</text>
-      <text x="84" y="118" class="fg" clip-path="url(#320_3)">######################</text>
+      <text x="84" y="118" class="fg" clip-path="url(#320_3)">####</text>
       <text x="238" y="118" class="br">]</text>
       <text x="246" y="118" class="pct">17%</text>
       <text x="0" y="144" class="nm">C++</text>
       <text x="78" y="144" class="br">[</text>
       <text x="84" y="144" class="bg">......................</text>
-      <text x="84" y="144" class="fg" clip-path="url(#320_4)">######################</text>
+      <text x="84" y="144" class="fg" clip-path="url(#320_4)">##</text>
       <text x="238" y="144" class="br">]</text>
       <text x="246" y="144" class="pct">8%</text>
       <text x="0" y="170" class="nm">other</text>
       <text x="78" y="170" class="br">[</text>
       <text x="84" y="170" class="bg">......................</text>
-      <text x="84" y="170" class="fg" clip-path="url(#320_5)">######################</text>
+      <text x="84" y="170" class="fg" clip-path="url(#320_5)">####</text>
       <text x="238" y="170" class="br">]</text>
       <text x="246" y="170" class="pct">17%</text></g>
     </g>

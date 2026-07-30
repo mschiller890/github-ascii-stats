@@ -21,18 +21,20 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
 
   let defs = "";
 
-  function col(title, entries, cx) {
+    function col(title, entries, cx) {
     let rows = "";
     entries.forEach(([name, pct], i) => {
       const y = 40 + i * 26;
       const d = i * 0.08;
+      const filled = Math.round(barLen * pct / 100);
+      const filledW = filled * 7;
       const cid = `${cx}_${i}`;
-      defs += `<clipPath id="${cid}"><rect x="${barX + 6}" y="${y - 9}" width="0" height="14"><animate attributeName="width" from="0" to="${barW}" dur="0.5s" begin="${d}s" fill="freeze"/></rect></clipPath>`;
+      defs += `<clipPath id="${cid}"><rect x="${barX + 6}" y="${y - 9}" width="0" height="14"><animate attributeName="width" from="0" to="${filledW}" dur="0.5s" begin="${d}s" fill="freeze"/></rect></clipPath>`;
       rows += `
       <text x="0" y="${y}" class="nm">${name}</text>
       <text x="${barX}" y="${y}" class="br">[</text>
       <text x="${barX + 6}" y="${y}" class="bg">${'.'.repeat(barLen)}</text>
-      <text x="${barX + 6}" y="${y}" class="fg" clip-path="url(#${cid})">${'#'.repeat(barLen)}</text>
+      <text x="${barX + 6}" y="${y}" class="fg" clip-path="url(#${cid})">${'#'.repeat(filled)}</text>
       <text x="${barX + 6 + barW}" y="${y}" class="br">]</text>
       <text x="${barX + 6 + barW + 8}" y="${y}" class="pct">${pct}%</text>`;
     });
