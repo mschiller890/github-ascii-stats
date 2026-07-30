@@ -16,11 +16,11 @@ export function renderCalendarSvg({ calendar, stats }) {
   const weeks = calendar.weeks;
   const maxCount = Math.max(1, ...weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount)));
 
-  const cellW = 22;
   const cellH = 20;
-  const padLeft = 42;
+  const padLeft = 35;
   const padTop = 64;
-  const width = padLeft + weeks.length * cellW + 30;
+  const cellW = Math.min(14, Math.floor((620 - padLeft - 25) / weeks.length));
+  const width = 620;
   const height = padTop + 7 * cellH + 60;
 
   let cells = "";

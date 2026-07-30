@@ -29,8 +29,8 @@ function column(title, entries, x, width) {
 }
 
 export function renderLanguagesSvg({ byBytes, byRepos }) {
-  const width = 560;
-  const colWidth = 230;
+  const width = 620;
+  const colWidth = 270;
 
   const bytesEntries = topN(Object.entries(byBytes));
   const reposEntries = topN(Object.entries(byRepos));
@@ -54,7 +54,7 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
     <g transform="translate(20, 55)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
-      ${column("BY REPOS", reposEntries, colWidth + 40, colWidth)}
+      ${column("BY REPOS", reposEntries, colWidth + 30, colWidth)}
     </g>
   </svg>`;
 }

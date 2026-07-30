@@ -1,9 +1,6 @@
 import { fmtDate } from "./streak.mjs";
 
 export function renderStreakSvg({ stats }) {
-  const width = 480;
-  const height = 200;
-
   const currentRange = stats.current.length
     ? `${fmtDate(stats.current.start)} - ${fmtDate(stats.current.end)}`
     : "no active streak";
@@ -11,7 +8,7 @@ export function renderStreakSvg({ stats }) {
     ? `${fmtDate(stats.longest.start)} - ${fmtDate(stats.longest.end)}`
     : "n/a";
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="620" height="260" viewBox="0 0 620 260">
     <style>
       @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap");
       @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -26,17 +23,17 @@ export function renderStreakSvg({ stats }) {
       .range { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #888888; }
       .divider { stroke: #2a2f28; stroke-width: 1; stroke-dasharray: 120; animation: drawLine 0.6s ease-out 0.2s both; }
     </style>
-    <text x="20" y="28" class="title">// STREAK<tspan class="cursor"> |</tspan></text>
+    <text x="26" y="28" class="title">// STREAK<tspan class="cursor"> |</tspan></text>
 
-    <g transform="translate(20, 70)">
+    <g transform="translate(26, 70)">
       <text x="0" y="0" class="big">${stats.current.length}</text>
       <text x="0" y="20" class="label">current streak</text>
       <text x="0" y="38" class="range">${currentRange}</text>
     </g>
 
-    <line class="divider" x1="${width / 2}" y1="50" x2="${width / 2}" y2="${height - 20}"/>
+    <line class="divider" x1="310" y1="50" x2="310" y2="240"/>
 
-    <g transform="translate(${width / 2 + 20}, 70)">
+    <g transform="translate(336, 70)">
       <text x="0" y="0" class="big">${stats.longest.length}</text>
       <text x="0" y="20" class="label">longest streak</text>
       <text x="0" y="38" class="range">${longestRange}</text>
