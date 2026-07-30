@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1238" height="256" viewBox="0 0 1238 256">
     <style>
-      .title { font: 700 15px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
       .month { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .daylabel { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
       .cell { font: 700 13px "Courier New", monospace; }
-      .caption { font: 600 12px "Courier New", monospace; fill: #aaaaaa; }
+      .caption { font: 600 11px "Courier New", monospace; fill: #aaaaaa; }
     </style>
-    <rect class="border" x="0.5" y="0.5" width="1237" height="255" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
-    <text x="20" y="28" class="title">MSCHILLER890 // THE YEAR</text>
+    <text x="20" y="28" class="title">// THE YEAR</text>
     <text x="42" y="42" class="month">jul</text><text x="64" y="42" class="month">aug</text><text x="174" y="42" class="month">sep</text><text x="262" y="42" class="month">oct</text><text x="350" y="42" class="month">nov</text><text x="460" y="42" class="month">dec</text><text x="548" y="42" class="month">jan</text><text x="636" y="42" class="month">feb</text><text x="724" y="42" class="month">mar</text><text x="834" y="42" class="month">apr</text><text x="922" y="42" class="month">may</text><text x="1032" y="42" class="month">jun</text><text x="1120" y="42" class="month">jul</text>
     
     <text x="0" y="76" class="daylabel">mon</text>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="220" viewBox="0 0 560 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="281" viewBox="0 0 560 281">
     <style>
       .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
       .colTitle { font: 700 11px "Courier New", monospace; fill: #aaaaaa; letter-spacing: 1px; }
@@ -7,8 +7,7 @@
       .track { fill: #333333; }
       .bar { fill: #5cc266; }
     </style>
-    <rect class="border" x="0.5" y="0.5" width="559" height="219" rx="10" fill="none" stroke="#2a2f28" stroke-width="1"/>
-    <text x="20" y="28" class="title">MSCHILLER890 // LANGUAGES</text>
+    <text x="20" y="28" class="title">// LANGUAGES</text>
     <g transform="translate(20, 55)">
       <g transform="translate(0, 0)">
     <text x="0" y="10" class="colTitle">BY BYTES</text>
