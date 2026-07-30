@@ -18,11 +18,11 @@ export function renderStreakSvg({ stats }) {
       @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
       @keyframes drawLine { from { stroke-dashoffset: 120; } to { stroke-dashoffset: 0; } }
       svg { animation: fadeUp 0.6s ease-out both; }
-      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "Courier New", "JetBrains Mono", monospace; fill: #ffffff; letter-spacing: 1px; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .big { font: 800 40px "Courier New", monospace; fill: #ffffff; animation: popIn 0.5s ease-out 0.3s both; }
-      .label { font: 700 11px "Courier New", monospace; fill: #aaaaaa; text-transform: uppercase; letter-spacing: 1px; }
-      .range { font: 600 11px "Courier New", monospace; fill: #888888; }
+      .big { font: 800 40px "Courier New", "JetBrains Mono", monospace; fill: #ffffff; animation: popIn 0.5s ease-out 0.3s both; }
+      .label { font: 700 11px "Courier New", "JetBrains Mono", monospace; fill: #aaaaaa; text-transform: uppercase; letter-spacing: 1px; }
+      .range { font: 600 11px "Courier New", "JetBrains Mono", monospace; fill: #888888; }
       .divider { stroke: #2a2f28; stroke-width: 1; stroke-dasharray: 120; animation: drawLine 0.6s ease-out 0.2s both; }
     </style>
     <text x="20" y="28" class="title">// STREAK<tspan class="cursor"> |</tspan></text>

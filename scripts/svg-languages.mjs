@@ -42,11 +42,11 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
       @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       svg { animation: fadeUp 0.6s ease-out both; }
-      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "Courier New", "JetBrains Mono", monospace; fill: #ffffff; letter-spacing: 1px; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .colTitle { font: 700 11px "Courier New", monospace; fill: #aaaaaa; letter-spacing: 1px; }
-      .lang { font: 600 12px "Courier New", monospace; fill: #ffffff; }
-      .pct { font: 700 12px "Courier New", monospace; fill: #888888; }
+      .colTitle { font: 700 11px "Courier New", "JetBrains Mono", monospace; fill: #aaaaaa; letter-spacing: 1px; }
+      .lang { font: 600 12px "Courier New", "JetBrains Mono", monospace; fill: #ffffff; }
+      .pct { font: 700 12px "Courier New", "JetBrains Mono", monospace; fill: #888888; }
       .track { fill: #333333; }
       .bar { fill: #5cc266; }
     </style>

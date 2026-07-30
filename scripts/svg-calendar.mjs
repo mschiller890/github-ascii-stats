@@ -59,13 +59,13 @@ export function renderCalendarSvg({ calendar, stats }) {
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
       svg { animation: fadeUp 0.6s ease-out both; }
-      .title { font: 700 14px "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
+      .title { font: 700 14px "Courier New", "JetBrains Mono", monospace; fill: #ffffff; letter-spacing: 1px; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .month { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
-      .daylabel { font: 600 11px "Courier New", monospace; fill: #888888; text-transform: uppercase; }
-      .cell { font: 700 13px "Courier New", monospace; }
+      .month { font: 600 11px "Courier New", "JetBrains Mono", monospace; fill: #888888; text-transform: uppercase; }
+      .daylabel { font: 600 11px "Courier New", "JetBrains Mono", monospace; fill: #888888; text-transform: uppercase; }
+      .cell { font: 700 13px "Courier New", "JetBrains Mono", monospace; }
       .a { animation: pulse 2s ease-in-out infinite; }
-      .caption { font: 600 11px "Courier New", monospace; fill: #aaaaaa; }
+      .caption { font: 600 11px "Courier New", "JetBrains Mono", monospace; fill: #aaaaaa; }
     </style>
     <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
     ${monthLabels}
