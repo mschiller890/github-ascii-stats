@@ -65,18 +65,16 @@ export function renderCalendarSvg({ calendar, stats }) {
     <style>
       @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap");
       @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
       svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
-      .cursor { animation: blink 1.2s steps(1) infinite; }
       .month { font: 600 10px "JetBrains Mono", "Courier New", monospace; fill: #555555; text-transform: uppercase; }
       .day { font: 600 10px "JetBrains Mono", "Courier New", monospace; fill: #444444; text-transform: uppercase; }
       .cell { font: 700 12px "JetBrains Mono", "Courier New", monospace; }
       .a { animation: pulse 2s ease-in-out infinite; }
       .cap { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; }
     </style>
-    <text x="20" y="26" class="title">// THE YEAR<tspan class="cursor"> |</tspan></text>
+    <text x="20" y="26" class="title">// THE YEAR</text>
     <defs>
       <clipPath id="g">
         <rect x="0" y="0" width="0" height="${height}">
