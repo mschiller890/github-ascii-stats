@@ -1,17 +1,18 @@
 # github-ascii-stats
 
-Three ASCII-styled SVG "endpoints" for your GitHub contribution history,
+ASCII-styled SVG "endpoints" for your GitHub contribution history,
 served for free as static files on GitHub Pages:
 
 - `docs/contribution-ascii.svg` — the year as a block-character heatmap
 - `docs/streak.svg` — current streak + longest streak
 - `docs/languages.svg` — top languages by bytes and by repo count
+- `docs/title-*.svg` — standalone customizable title text (one per `TITLES` entry)
 
 ## Why this shape
 
 GitHub Pages only serves static files — it can't run a script per request.
 So instead of a live "endpoint", a GitHub Action runs on a schedule, calls
-the GitHub API, regenerates the three SVGs, and commits them into `docs/`.
+the GitHub API, regenerates the SVGs, and commits them into `docs/`.
 Pages then serves those files, and they update every few hours. This is the
 same pattern used by most GitHub stats/streak card generators.
 
@@ -50,6 +51,7 @@ Pages will then serve them at:
 https://<your-username>.github.io/<repo-name>/contribution-ascii.svg
 https://<your-username>.github.io/<repo-name>/streak.svg
 https://<your-username>.github.io/<repo-name>/languages.svg
+https://<your-username>.github.io/<repo-name>/title-1.svg
 ```
 
 Embed anywhere that renders images, e.g. your profile README:
@@ -58,6 +60,8 @@ Embed anywhere that renders images, e.g. your profile README:
 ![contributions](https://<your-username>.github.io/<repo-name>/contribution-ascii.svg)
 ![streak](https://<your-username>.github.io/<repo-name>/streak.svg)
 ![languages](https://<your-username>.github.io/<repo-name>/languages.svg)
+![title-1](https://<your-username>.github.io/<repo-name>/title-1.svg)
+![title-2](https://<your-username>.github.io/<repo-name>/title-2.svg)
 ```
 
 ## Customizing
@@ -69,6 +73,7 @@ Embed anywhere that renders images, e.g. your profile README:
 - **Which repos count toward languages**: `buildLanguageStats` in
   `scripts/index.mjs` currently uses all non-fork repos owned by the user;
   filter further there if you want to exclude specific repositories.
+- **Title SVGs**: set `TITLES` env var as comma-separated values (e.g. `TITLES="// HELLO,// WORLD"`) to generate `docs/title-1.svg`, `docs/title-2.svg`, etc.
 - **Card size/fonts**: each `scripts/svg-*.mjs` file is a small, self
   contained SVG template — tweak freely.
 

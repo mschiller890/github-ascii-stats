@@ -6,6 +6,11 @@ import { USERNAME, fetchContributionCalendar, fetchOwnedRepos, fetchRepoLanguage
 import { computeStreaks } from "./streak.mjs";
 import { renderCalendarSvg } from "./svg-calendar.mjs";
 import { renderLanguagesSvg } from "./svg-languages.mjs";
+import { renderTitleSvg } from "./svg-title.mjs";
+
+const TITLES = process.env.TITLES
+  ? process.env.TITLES.split(",").map((s) => s.trim())
+  : ["about", "stack", "projects"];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, "..", "docs");
@@ -50,7 +55,14 @@ async function main() {
   await writeFile(path.join(OUT_DIR, "contribution-ascii.svg"), calendarSvg, "utf8");
   await writeFile(path.join(OUT_DIR, "languages.svg"), languagesSvg, "utf8");
 
-  console.log("Done. Wrote docs/contribution-ascii.svg, docs/languages.svg");
+  const written = ["contribution-ascii.svg", "languages.svg"];
+  TITLES.forEach((text, i) => {
+    const name = `title-${i + 1}.svg`;
+    writeFile(path.join(OUT_DIR, name), renderTitleSvg({ text }), "utf8");
+    written.push(name);
+  });
+
+  console.log("Done. Wrote " + written.join(", "));
 }
 
 main().catch((err) => {

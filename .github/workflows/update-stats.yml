@@ -32,6 +32,7 @@ jobs:
           # named GH_STATS_TOKEN.
           GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
+          # TITLES: // STATS,// HELLO
 
       - name: Commit updated SVGs
         run: |

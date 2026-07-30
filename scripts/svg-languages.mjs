@@ -7,7 +7,7 @@ function topN(entries, n = 5) {
   return top.map(([name, v]) => [name, Math.round((v / total) * 100)]);
 }
 
-export function renderLanguagesSvg({ byBytes, byRepos }) {
+export function renderLanguagesSvg({ byBytes, byRepos, title = "// languages" }) {
   const width = 620;
   const colW = 286;
   const barX = 78;
@@ -41,8 +41,8 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
     return `<g transform="translate(${cx}, 0)"><text x="0" y="12" class="ct">## ${title}</text>${rows}</g>`;
   }
 
-  const c1 = col("BY BYTES", bytesEntries, 0);
-  const c2 = col("BY REPOS", reposEntries, colW + 34);
+  const c1 = col("by bytes", bytesEntries, 0);
+  const c2 = col("by repos", reposEntries, colW + 34);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
@@ -57,7 +57,7 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
       .fg { font: 600 11px "JetBrains Mono", "Courier New", monospace; fill: #5cc266; }
       .pct { font: 700 10px "JetBrains Mono", "Courier New", monospace; fill: #444444; }
     </style>
-    <text x="20" y="28" class="title">// LANGUAGES</text>
+    <text x="20" y="28" class="title">${title}</text>
     <defs>${defs}</defs>
     <g transform="translate(20, 52)">
       ${c1}
