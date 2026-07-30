@@ -5,7 +5,6 @@ import path from "node:path";
 import { USERNAME, fetchContributionCalendar, fetchOwnedRepos, fetchRepoLanguages } from "./github.mjs";
 import { computeStreaks } from "./streak.mjs";
 import { renderCalendarSvg } from "./svg-calendar.mjs";
-import { renderStreakSvg } from "./svg-streak.mjs";
 import { renderLanguagesSvg } from "./svg-languages.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -17,7 +16,6 @@ async function buildLanguageStats(login) {
   const byBytes = {};
   const byRepos = {};
 
-  // Rate-limit friendly: sequential with small concurrency window.
   const CONCURRENCY = 5;
   for (let i = 0; i < repos.length; i += CONCURRENCY) {
     const batch = repos.slice(i, i + CONCURRENCY);
@@ -47,14 +45,12 @@ async function main() {
   const { byBytes, byRepos } = await buildLanguageStats(USERNAME);
 
   const calendarSvg = renderCalendarSvg({ calendar, stats });
-  const streakSvg = renderStreakSvg({ stats });
   const languagesSvg = renderLanguagesSvg({ byBytes, byRepos });
 
   await writeFile(path.join(OUT_DIR, "contribution-ascii.svg"), calendarSvg, "utf8");
-  await writeFile(path.join(OUT_DIR, "streak.svg"), streakSvg, "utf8");
   await writeFile(path.join(OUT_DIR, "languages.svg"), languagesSvg, "utf8");
 
-  console.log("Done. Wrote docs/contribution-ascii.svg, docs/streak.svg, docs/languages.svg");
+  console.log("Done. Wrote docs/contribution-ascii.svg, docs/languages.svg");
 }
 
 main().catch((err) => {

@@ -19,7 +19,7 @@ function column(title, entries, x, width) {
       <rect x="90" y="${y - 11}" width="0" height="10" class="bar">
         <animate attributeName="width" from="0" to="${barW}" dur="0.6s" begin="${delay}s" fill="freeze"/>
       </rect>
-      <text x="${width + 6}" y="${y}" class="pct">${pct}%</text>
+      <text x="${width + 6}" y="${y}" class="pct">[ ${pct}% ]</text>
     `;
   });
   return `<g transform="translate(${x}, 0)">
@@ -35,7 +35,9 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
   const bytesEntries = topN(Object.entries(byBytes));
   const reposEntries = topN(Object.entries(byRepos));
   const maxEntries = Math.max(bytesEntries.length, reposEntries.length);
-  const height = 95 + maxEntries * 26 + 30;
+  const height = 95 + maxEntries * 26 + 36;
+  const totalBytes = bytesEntries.reduce((s, [, v]) => s + v, 0);
+  const totalRepos = reposEntries.reduce((s, [, v]) => s + v, 0);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>
@@ -45,14 +47,16 @@ export function renderLanguagesSvg({ byBytes, byRepos }) {
       svg { animation: fadeUp 0.6s ease-out both; }
       .title { font: 700 14px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; letter-spacing: 1px; }
       .cursor { animation: blink 1.2s steps(1) infinite; }
-      .colTitle { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #aaaaaa; letter-spacing: 1px; }
+      .sep { font: 400 10px "JetBrains Mono", "Courier New", monospace; fill: #2a2f28; }
+      .colTitle { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #6b7a6b; letter-spacing: 1px; }
       .lang { font: 600 12px "JetBrains Mono", "Courier New", monospace; fill: #ffffff; }
-      .pct { font: 700 12px "JetBrains Mono", "Courier New", monospace; fill: #888888; }
-      .track { fill: #333333; }
+      .pct { font: 700 11px "JetBrains Mono", "Courier New", monospace; fill: #555555; }
+      .track { fill: #1c1f1a; }
       .bar { fill: #5cc266; }
     </style>
     <text x="20" y="28" class="title">// LANGUAGES<tspan class="cursor"> |</tspan></text>
-    <g transform="translate(20, 55)">
+    <text x="20" y="40" class="sep">${'─'.repeat(75)}</text>
+    <g transform="translate(20, 59)">
       ${column("BY BYTES", bytesEntries, 0, colWidth)}
       ${column("BY REPOS", reposEntries, colWidth + 30, colWidth)}
     </g>
