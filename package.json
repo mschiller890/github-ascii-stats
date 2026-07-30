@@ -1,0 +1,13 @@
+{
+  "name": "github-ascii-stats",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Generates ASCII-styled GitHub contribution/streak/language SVGs for GitHub Pages",
+  "scripts": {
+    "generate": "node scripts/index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
